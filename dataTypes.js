@@ -28,7 +28,23 @@ console.log(num5, num6);
 
 console.log(1 / 0 === Infinity);
 
+console.log(1_000_000 === 1e6);
+
+// string
+
+console.log('hola' === "hola");
+
+console.log("It's wonderful");
+console.log('It\'s wonderful');
+console.log('It\\s wonderful');
+console.log('It\\s \n \
+wonderful');
+var name = 'juan'
+console.log('hola ' + name + '!');
+
+
 // function
+
 
 // // var f =
 // function f() {}
