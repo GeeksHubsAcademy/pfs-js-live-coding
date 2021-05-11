@@ -58,3 +58,41 @@ console.log(!falsy);
 
 console.log(!(!truthy) );
 console.log( Boolean(truthy) );
+
+
+
+// asignación
+
+var a = 1;
+a = 2;
+
+a += 1;  // ++a,  a = a + 1
+a -= 1;  // --a,  a = a - 1
+a -= 2;  //  a = a - 2
+a *= 2;  //  a = a * 2
+a **= 2;  //  a = a ** 2
+a /= 2;  //  a = a / 2
+
+var b = 2
+b /= 2; // 1  //  b = b / 2
+
+var c = 12
+c %= 2;  //  c = c % 2
+
+console.log(c);
+
+// comparisons
+
+
+console.log( 1 === 1);
+console.log( true === 1);
+console.log( true == 1);
+console.log( true == 2);  // false ¿?¿?¿?
+console.log( 2 == '2');  // mala practica
+console.log( 2 === Number('2')); // ok
+console.log( 2 === +'2'); // ok
+console.log( 2 === Number.parseInt('2')); // ok
+console.log( 2 === Number.parseFloat('2')); // ok
+
+console.log(true !== 1);
+console.log(true != 1);
