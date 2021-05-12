@@ -94,3 +94,25 @@ console.log([] == false); // true ?????
 if ([]) {
   console.log([], 'es cierto');
 }
+
+function runForGreaterThan50() {}
+function runForLessThanOrEqual50() {}
+// ternario
+
+var number = 40;
+// var isGreaterThan50 =  number > 50 ? true : false;
+// var isGreaterThan50 =  number > 50;
+
+var isGreaterThan50 = number > 50 ? 'si' : 'no';
+
+// bad
+number > 50
+  ? runForGreaterThan50(number)
+  : runForLessThanOrEqual50(number);
+
+// good
+if (number > 50) {
+  runForGreaterThan50(number);
+} else {
+  runForLessThanOrEqual50(number);
+}
