@@ -11,12 +11,9 @@ console.log(num);
 
 console.log(++num);
 
-
-console.log( +'1');
+console.log(+'1');
 console.log('1' + 2 + 3 === '123');
 console.log(1 + 3 + '3' === '43');
-
-
 
 // lógicos
 
@@ -29,70 +26,71 @@ console.log(1 && 2);
 
 var user = null;
 if (user) {
-    fetchData(user)
+  fetchData(user);
 }
-user && fetchData(user)
-
-
+user && fetchData(user);
 
 console.log(false || true);
 console.log(false || 1);
 console.log(2 || 1);
 
-
-
 function getAge(age) {
-    age = age || 18
+  age = age || 18;
 
-    return age
-
+  return age;
 }
 
 console.log(getAge(0)); // ojo con el 0
 
-
-const truthy = 'a'
-const falsy = ''
+const truthy = 'a';
+const falsy = '';
 console.log(!truthy);
 console.log(!falsy);
 
-console.log(!(!truthy) );
-console.log( Boolean(truthy) );
-
-
+console.log(!!truthy);
+console.log(Boolean(truthy));
 
 // asignación
 
 var a = 1;
 a = 2;
 
-a += 1;  // ++a,  a = a + 1
-a -= 1;  // --a,  a = a - 1
-a -= 2;  //  a = a - 2
-a *= 2;  //  a = a * 2
-a **= 2;  //  a = a ** 2
-a /= 2;  //  a = a / 2
+a += 1; // ++a,  a = a + 1
+a -= 1; // --a,  a = a - 1
+a -= 2; //  a = a - 2
+a *= 2; //  a = a * 2
+a **= 2; //  a = a ** 2
+a /= 2; //  a = a / 2
 
-var b = 2
+var b = 2;
 b /= 2; // 1  //  b = b / 2
 
-var c = 12
-c %= 2;  //  c = c % 2
+var c = 12;
+c %= 2; //  c = c % 2
 
 console.log(c);
 
 // comparisons
 
-
-console.log( 1 === 1);
-console.log( true === 1);
-console.log( true == 1);
-console.log( true == 2);  // false ¿?¿?¿?
-console.log( 2 == '2');  // mala practica
-console.log( 2 === Number('2')); // ok
-console.log( 2 === +'2'); // ok
-console.log( 2 === Number.parseInt('2')); // ok
-console.log( 2 === Number.parseFloat('2')); // ok
+console.log(1 === 1);
+console.log(true === 1);
+console.log(true == 1);
+console.log(true == 2); // false ¿?¿?¿?
+console.log(2 == '2'); // mala practica
+console.log(2 === Number('2')); // ok
+console.log(2 === +'2'); // ok
+console.log(2 === Number.parseInt('2')); // ok
+console.log(2 === Number.parseFloat('2')); // ok
 
 console.log(true !== 1);
-console.log(true != 1);
+console.log(true != 1); // true
+console.log(null === null);
+console.log(NaN === NaN); // false ????
+console.log(NaN == NaN); // false  ????
+
+const rnd = Math.random();
+console.log([] == false); // true ?????
+
+if ([]) {
+  console.log([], 'es cierto');
+}
