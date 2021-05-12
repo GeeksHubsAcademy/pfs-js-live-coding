@@ -63,3 +63,74 @@ console.log(willItBlend({}) === false);
 console.log(willItBlend([]) === false);
 console.log(willItBlend(2) === false);
 console.log(willItBlend(null) === false);
+
+//  switch
+
+var num3 = 1;
+
+switch (num3) {
+  case 1:
+    console.log('num is 1!');
+    break;
+  case 2:
+    console.log('num is 2!');
+    break;
+  default:
+    console.log('default!');
+
+    break;
+}
+
+var num4 = 50;
+
+switch (num4 <= 50) {
+  case true:
+    console.log('num is less than 50!');
+    break;
+
+  default:
+    console.log('default!');
+
+    break;
+}
+
+var num5 = 50;
+
+switch (true) {
+  case num5 <= 20:
+    console.log('num is less than 20!');
+    break;
+  case num5 <= 50:
+    console.log('num is more than 20 and less than 50!');
+    break;
+
+  default:
+    console.log('default!');
+
+    break;
+}
+
+var nota = 3;
+
+switch (nota) {
+  case 3:
+    console.log('tu nota es mayor que ', 2);
+  case 2:
+    console.log('tu nota es mayor que ', 1);
+  case 1:
+    console.log('tu nota es mayor  que ', 0);
+}
+
+var nota2 = 3;
+
+switch (nota2) {
+  case (3, 4):
+    console.log('tu nota es mayor que ', 2);
+  // case 4:
+  // case 3:
+  //     console.log('tu nota es mayor que ', 2);
+  case 2:
+    console.log('tu nota es mayor que ', 1);
+  case 1:
+    console.log('tu nota es mayor  que ', 0);
+}
