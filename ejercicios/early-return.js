@@ -31,3 +31,40 @@ function isAptaParaUnCredito(persona) {
   }
   return false;
 }
+
+// function willItBlend(someObject) {
+//   var itWillBlend;
+
+//   if (typeof someObject === 'object') {
+//     if (someObject.blendable === 'It will blend') {
+//       itWillBlend = true;
+//     } else {
+//       itWillBlend = false;
+//     }
+//   } else {
+//     itWillBlend = false;
+//   }
+
+//   return itWillBlend;
+// }
+
+function willItBlend(someObject) {
+  if (!someObject) {
+    return false;
+  }
+  if (typeof someObject !== 'object') {
+    return false;
+  }
+  if (someObject.blendable === 'It will blend') {
+    return true;
+  }
+  return false;
+}
+
+console.log(
+  willItBlend({ blendable: 'It will blend' }) === true,
+);
+console.log(willItBlend({}) === false);
+console.log(willItBlend([]) === false);
+console.log(willItBlend(2) === false);
+console.log(willItBlend(null) === false);
