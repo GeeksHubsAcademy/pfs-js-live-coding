@@ -29,12 +29,11 @@ try {
     throw error;
   }
 }
-// assert(age > 18);
 
 // finally
 function finallyAlwaysRuns() {
   try {
-    ñlkjsad();
+    // ñlkjsad();
     return 10;
   } catch (error) {
     console.log('error', error);
