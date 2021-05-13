@@ -116,3 +116,13 @@ if (number > 50) {
 } else {
   runForLessThanOrEqual50(number);
 }
+
+// Operador coma, no recomendado
+
+var a = (3, 4, 6);
+
+console.log(a);
+
+for (let index = 0, j = 10; index < array.length; index++, j--) {
+  console.log(index, j);
+}
