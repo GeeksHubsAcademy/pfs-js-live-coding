@@ -76,3 +76,25 @@ var array5 = ['a', 'b'];
 array5.forEach(function (item, index, array) {
   console.log(item, index, array);
 });
+
+// Object.prototype
+const object = {
+  a: 1,
+  b: 2,
+  c: { d: 3 },
+};
+
+console.log(object.toString());
+console.log(JSON.stringify(object));
+
+console.log(Object.keys(object));
+console.log(Object.values(object));
+console.log(Object.entries(object));
+
+const entries = [
+  ['a', 1],
+  ['b', 2],
+  ['c', { d: 3 }],
+];
+
+console.log(Object.fromEntries(entries));
