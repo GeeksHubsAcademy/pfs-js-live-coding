@@ -60,3 +60,24 @@ i++; // TypeError: Assignment to constant variable.
 
 const PI = 3.14;
 const arrayNumber = [1, 23];
+
+// for of
+const films = [
+  { title: 'P tinto', id: 1 },
+  { title: 'superman', id: 2 },
+  { title: 'batman', related: [{ a: 1 }, { b: 2 }] },
+];
+for (const film of films) {
+  // const film = arr[i];
+  console.log(film.related?.[0]?.a);
+}
+
+{
+  const film = arr[0];
+}
+{
+  const film = arr[1];
+}
+{
+  const film = arr[2];
+}
