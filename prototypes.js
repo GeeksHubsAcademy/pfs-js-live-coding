@@ -35,6 +35,28 @@ console.log(myString.match(/\sa/g));
 var myBoolean = true;
 console.log(myBoolean.toString());
 
+// Object.prototype
+const object = {
+  a: 1,
+  b: 2,
+  c: { d: 3 },
+};
+
+console.log(object.toString());
+console.log(JSON.stringify(object));
+
+console.log(Object.keys(object));
+console.log(Object.values(object));
+console.log(Object.entries(object));
+
+const entries = [
+  ['a', 1],
+  ['b', 2],
+  ['c', { d: 3 }],
+];
+
+console.log(Object.fromEntries(entries));
+
 //  Array.prototype
 
 var myArray = [10, 20];
@@ -77,24 +99,98 @@ array5.forEach(function (item, index, array) {
   console.log(item, index, array);
 });
 
-// Object.prototype
-const object = {
-  a: 1,
-  b: 2,
-  c: { d: 3 },
-};
+// Array.prototype.every
+console.clear();
 
-console.log(object.toString());
-console.log(JSON.stringify(object));
+const numbers = [1, 3, 5];
+// const numbers = [1, 2, 5];
 
-console.log(Object.keys(object));
-console.log(Object.values(object));
-console.log(Object.entries(object));
+const everyAreOdd = numbers.every((item) => {
+  console.log(item);
+  return item % 2 === 1;
+});
+console.log(everyAreOdd);
 
-const entries = [
-  ['a', 1],
-  ['b', 2],
-  ['c', { d: 3 }],
+// Array.prototype.some
+const someAreOdd = numbers.some((item) => {
+  console.log(item);
+  return item % 2 === 1;
+});
+console.log(someAreOdd);
+
+// Array.prototype.map
+
+const doubles = numbers.map((x) => x * 2);
+
+console.log({ numbers });
+console.log({ doubles });
+
+const people = [
+  { name: 'juan' },
+  { name: 'jesus' },
+  { name: 'carlos' },
+  { name: 'fran' },
+  { name: 'diego' },
+  { name: 'antonio' },
 ];
 
-console.log(Object.fromEntries(entries));
+const names = people.map(({ name }) => name.toUpperCase());
+console.log({ names });
+
+const nameLengths = names.map((name) => name.length);
+
+console.log({ nameLengths });
+
+const peopleWithNameLengths = people.map((person) => ({
+  ...person,
+  nameLength: person.name.length,
+}));
+
+console.log({ peopleWithNameLengths });
+
+console.log({ people });
+
+// Array.prototype.myMap = function(fn) {
+//   const returned = []
+//   for (const value of this) {
+//     returned.push(fn(value))
+//   }
+//   return returned
+// }
+
+// Array.prototype.filter
+
+const longestName = peopleWithNameLengths.filter(
+  (person) => person.nameLength > 5,
+);
+
+console.log({ longestName });
+
+// Array.prototype.find
+
+const found = peopleWithNameLengths.find(
+  (person) => person.nameLength > 5,
+);
+console.log({ found });
+
+// Array.prototype.findIndex
+
+const indexFound = peopleWithNameLengths.findIndex(
+  (person) => person.nameLength > 5,
+);
+console.log({ indexFound });
+
+// Array.prototype.reduce
+{
+  const numbers = [10, 20, 30];
+  // let total = 0;
+  // for (const num of numbers) {
+  //   total += num;
+  // }
+
+  const total = numbers.reduce((previousValue, currentValue) => {
+    // console.log({ previousValue, currentValue });
+    return previousValue + currentValue;
+  }, 100);
+  console.log({ total });
+}
