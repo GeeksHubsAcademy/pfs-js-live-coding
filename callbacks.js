@@ -99,3 +99,16 @@ factorialErrorAsync(3, (e, r1) => {
 
 // const odds = [1, 2, 3, 4, 5].filter( (num) => num % 2 === 1   );
 // console.log(odds);
+
+const cb = (error, result) => {
+  console.log(error, result);
+};
+
+const num = 3;
+factorialErrorAsync(3, (error, result) => {
+  console.log(error, result);
+});
+
+factorialErrorAsync(num, cb);
+
+factorialErrorAsync(num, console.log);
