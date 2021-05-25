@@ -45,3 +45,35 @@ function finallyAlwaysRuns() {
 }
 
 console.log(finallyAlwaysRuns());
+
+//  instanceof
+////////////////////////////////////////////////////////////////
+// try {
+//   const err = new Error('ups');
+
+//   throw err;
+// } catch (error) {
+//   console.log(error.name);
+//   console.log(error.message);
+//   console.log(error.stack);
+// }
+
+// try {
+//   const err = 1
+
+//   throw err;
+// } catch (error) {
+//   console.log(error);
+// }
+
+try {
+  guardaEnBD();
+} catch (error) {
+  console.log(error);
+  if (error instanceof ReferenceError) {
+    console.log('error es of class ReferenceError');
+  }
+  if (error instanceof Error) {
+    console.log('error es of class Error');
+  }
+}

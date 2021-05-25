@@ -30,7 +30,7 @@ const factorialAsync = (i, callback) => {
 // console.time();
 // console.log('1');
 factorialAsync(3, (r) => {
-  //   console.log(r);
+  console.log(r);
   // do whatever you want
   //   removeLoading();
 });

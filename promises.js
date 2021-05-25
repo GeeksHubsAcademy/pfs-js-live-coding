@@ -104,3 +104,13 @@ const promiseAny = Promise.any([
 promiseAny
   .then((r) => console.log('resolved in ' + r))
   .catch((r) => console.log('rejected in ' + r));
+
+//  only one final state
+
+const asyncFunction = () =>
+  new Promise((res, rej) => {
+    res('resuelta!');
+    rej('rechazada!');
+  });
+
+asyncFunction().then(console.log).catch(console.log);
