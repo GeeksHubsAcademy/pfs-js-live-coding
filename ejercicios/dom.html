@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+
+    <style>
+      .first {
+        background-color: tomato;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log(document.querySelector('h1'));
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <section class="first" style="color: white">
+        <h1 class="ey">first</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. In similique id quisquam dicta nesciunt, beatae
+          tempora accusantium aperiam fugit quaerat recusandae
+          quas facere? Molestiae amet quisquam odio
+          necessitatibus dicta repudiandae?
+        </p>
+      </section>
+      <section class="second">
+        <h1>second</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. In similique id quisquam dicta nesciunt, beatae
+          tempora accusantium aperiam fugit quaerat recusandae
+          quas facere? Molestiae amet quisquam odio
+          necessitatibus dicta repudiandae?
+        </p>
+      </section>
+      <section class="third">
+        <h1>third</h1>
+        <p onclick="handleClick()">
+          Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. In similique id quisquam dicta nesciunt, beatae
+          tempora accusantium aperiam fugit quaerat recusandae
+          quas facere? Molestiae amet quisquam odio
+          necessitatibus dicta repudiandae?
+        </p>
+        <a href="https://www.garn.dev"> example</a>
+      </section>
+    </main>
+  </body>
+  <script>
+    // DOM SELECTION
+    const node = document.querySelector('section.third');
+    console.dir(node);
+    // query only inside a node
+    console.log(node.querySelector('h1'));
+
+    // querySelectorAll
+
+    const h1s = document.querySelectorAll('h1');
+
+    // NOT AN ARRAY console.log(h1s.map((node) => node.className));
+    console.log([...h1s].map((node) => node.className));
+
+    for (const h1 of h1s) {
+      h1.innerText += '!!!!!!';
+      h1.className = 'title';
+    }
+  </script>
+
+  <script>
+    // DOM CREATION
+    const newNode = document.createElement('i');
+    const newText = document.createTextNode('i am italic');
+    newNode.appendChild(newText);
+    console.log(newNode);
+    document.querySelector('main').append(newNode);
+
+    function createNode(html) {
+      const node = document.createElement('div');
+      node.innerHTML = html;
+      return node.firstChild;
+    }
+
+    const h1 = createNode(
+      `<span>
+        hola
+        <b>mundo</b>
+      </span>`,
+    );
+    document.querySelector('main').prepend(h1);
+  </script>
+
+  <script>
+    // EVENT SUBSCRIPTIONS
+
+    document.querySelectorAll('h1').forEach((el) =>
+      el.addEventListener('click', (event) => {
+        console.log(event);
+        console.log(event.target);
+      }),
+    );
+
+    const p = document.querySelector('p');
+    // NO recommended
+    p.onclick = function (ev) {
+      console.log('2', ev.target);
+    };
+    p.onclick = function (ev) {
+      console.log('1', ev.target);
+    };
+    // recommended
+    p.addEventListener('click', (ev) => {
+      console.log('3', ev.target);
+    });
+    p.addEventListener('click', (ev) => {
+      console.log('4', ev.target);
+      //   ev.stopPropagation();
+    });
+
+    document
+      .querySelector('section')
+      .addEventListener('click', (ev) => {
+        console.log('i am your father', ev.target);
+      });
+
+    function handleClick(ev) {
+      console.log('5', ev);
+    }
+
+    document
+      .querySelector('a')
+      .addEventListener('click', (ev) => {
+        ev.preventDefault();
+        console.log('a clicked', ev.target);
+        const newHref = ev.target.href;
+
+        location.href = newHref + '/hola';
+      });
+  </script>
+</html>
