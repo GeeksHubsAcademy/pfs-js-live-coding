@@ -24,4 +24,13 @@ class Todo {
   }
 }
 
-const todosList = [];
+class ListTodo {
+  constructor() {
+    this.todosList = [];
+  }
+  add(todo) {
+    this.todosList.push(todo);
+  }
+}
+
+const todosModel = new ListTodo();
