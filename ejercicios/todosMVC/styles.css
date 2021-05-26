@@ -27,6 +27,7 @@ header button {
   all: unset;
   text-transform: uppercase;
   padding: 1em;
+  cursor: pointer;
 }
 
 main {
@@ -48,4 +49,21 @@ main {
 .todo .text {
   font-weight: bold;
   font-size: 1.2em;
+}
+
+.todo .actions {
+  padding: 1em 0;
+}
+
+.todo .remove {
+  all: unset;
+  text-transform: uppercase;
+  cursor: pointer;
+  /* padding: 1em; */
+}
+
+.todo .date {
+  opacity: 0.5;
+  font-size: 0.8em;
+  margin: 0.3em 0;
 }

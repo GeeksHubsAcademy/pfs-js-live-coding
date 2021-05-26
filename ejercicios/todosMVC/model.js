@@ -3,10 +3,12 @@ export class Todo {
   completed = false;
   created = null;
   updated = null;
+  id = null;
   constructor(text) {
     this.text = text;
     this.created = this.#newDate();
     this.updated = this.created;
+    this.id = Date.now();
   }
   #newDate() {
     return new Date().toISOString();
@@ -28,12 +30,16 @@ class ListTodo {
   constructor() {
     this.todosList =
       JSON.parse(localStorage.getItem('todos')) || [];
-    console.log(this.todosList);
   }
   add(todo) {
     this.todosList.push(todo);
-    console.log(this.todosList);
 
+    this.persist();
+  }
+  findAndDelete(id) {
+    this.todosList = this.todosList.filter(
+      (todo) => todo.id !== id,
+    );
     this.persist();
   }
   persist() {

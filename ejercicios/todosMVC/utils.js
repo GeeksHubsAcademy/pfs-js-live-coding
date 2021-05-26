@@ -5,13 +5,15 @@ function createNode(html) {
   return node.firstChild;
 }
 
-export function createTodoNode(todo) {
+export function createTodoNode({ id, text, updated, created }) {
   const newNode = createNode(`
-  <div class="todo">
-    <div class="text">${todo.text}</div>
-    <div class="updated">${todo.updated}</div>
-    <div class="created">${todo.created}</div>
+  <div class="todo" id="${id}">
+    <div class="text">${text}</div>
+    <div class="date updated">${updated}</div>
+    <div class="date created">${created}</div>
+    <div class="actions">
+        <button class="remove">remove</button>
+    </div>
   </div>`);
-
   return newNode;
 }

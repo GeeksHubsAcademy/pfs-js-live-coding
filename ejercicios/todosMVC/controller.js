@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const addInputNode = document.querySelector('#addTodo');
   const todoListNode = document.querySelector('#todoList');
 
-  //  Init view with persisted model
+  //  INIT VIEW WITH PERSISTED MODEL
 
   const todos = todosModel.todosList;
   todos.forEach((todo) => {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   //  ADD TODO
-  function onSubmit(event) {
+  function onSubmitController(event) {
     event.preventDefault();
 
     // read input value
@@ -44,5 +44,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document
     .querySelector('form')
-    .addEventListener('submit', onSubmit);
+    .addEventListener('submit', onSubmitController);
+
+  // REMOVE TODO
+
+  function onRemoveController(event) {
+    // remove node from dom
+    event.target.parentNode.parentNode.remove();
+
+    // remove todo from model
+    const id = Number(event.target.parentNode.parentNode.id);
+    todosModel.findAndDelete(id);
+  }
+
+  // no se subscribe a nodos futuros
+  //   document.querySelectorAll('.remove').forEach((button) => {
+  //     button.addEventListener('click', onRemoveController);
+  //   });
+  todoListNode.addEventListener('click', function (event) {
+    if (event.target.matches('.remove')) {
+      onRemoveController(event);
+    }
+  });
 });
