@@ -1,4 +1,4 @@
-class Todo {
+export class Todo {
   text = '';
   completed = false;
   created = null;
@@ -26,11 +26,22 @@ class Todo {
 
 class ListTodo {
   constructor() {
-    this.todosList = [];
+    this.todosList =
+      JSON.parse(localStorage.getItem('todos')) || [];
+    console.log(this.todosList);
   }
   add(todo) {
     this.todosList.push(todo);
+    console.log(this.todosList);
+
+    this.persist();
+  }
+  persist() {
+    localStorage.setItem(
+      'todos',
+      JSON.stringify(this.todosList),
+    );
   }
 }
 
-const todosModel = new ListTodo();
+export const todosModel = new ListTodo();

@@ -1,25 +1,18 @@
+import { Todo, todosModel } from './model.js';
+import { createTodoNode } from './utils.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   // nodes
   const addInputNode = document.querySelector('#addTodo');
   const todoListNode = document.querySelector('#todoList');
 
-  // utils
-  function createNode(html) {
-    const node = document.createElement('div');
-    node.innerHTML = html.trim();
-    return node.firstChild;
-  }
+  //  Init view with persisted model
 
-  function createTodoNode(todo) {
-    const newNode = createNode(`
-  <div class="todo">
-    <div class="text">${todo.text}</div>
-    <div class="updated">${todo.updated}</div>
-    <div class="created">${todo.created}</div>
-  </div>`);
-
-    return newNode;
-  }
+  const todos = todosModel.todosList;
+  todos.forEach((todo) => {
+    const todoNode = createTodoNode(todo);
+    todoListNode.appendChild(todoNode);
+  });
 
   //  ADD TODO
   function onSubmit(event) {
@@ -41,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // render todo
 
     const node = createTodoNode(newTodo);
-    // console.log(node);
 
     //  append node
     todoListNode.appendChild(node);
