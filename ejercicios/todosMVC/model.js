@@ -28,7 +28,6 @@ export class Todo {
   }
 }
 
-
 class ListTodo {
   constructor() {
     this.todosList =
