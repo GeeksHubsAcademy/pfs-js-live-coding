@@ -14,7 +14,9 @@ export class Todo {
     return new Date().toISOString();
   }
 
-  set created(value) {}
+  set created(value) {
+    // do nothing
+  }
 
   set text(text) {
     this.text = text;
@@ -25,6 +27,7 @@ export class Todo {
     this.updated = this.#newDate();
   }
 }
+
 
 class ListTodo {
   constructor() {
