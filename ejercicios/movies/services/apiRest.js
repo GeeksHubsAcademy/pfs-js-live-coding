@@ -1,6 +1,6 @@
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = '10b2a75d0c5d29a93d009c31e8d01a78';
-export const IMAGES_BASE_URL = 'https://image.tmdb.org/t/p/';
+export const IMAGES_BASE_URL = 'https://image.tmdb.org/t/p';
 
 async function fetchWrapper(url, method = 'GET') {
   const response = await fetch(url, { method });
@@ -16,4 +16,4 @@ export function getMovieById(id) {
   );
 }
 
-// export function getTrendingMovies(page = 1) {}
+export function getTrendingMovies(page = 1) {}
