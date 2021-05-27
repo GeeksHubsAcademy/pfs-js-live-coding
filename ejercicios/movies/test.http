@@ -1,0 +1,13 @@
+@API_KEY=10b2a75d0c5d29a93d009c31e8d01a78
+
+GET  https://api.themoviedb.org:443/3/movie/550?api_key={{API_KEY}}
+
+###
+
+GET https://api.themoviedb.org/3/trending/all/day?api_key={{API_KEY}}
+
+
+###
+https://image.tmdb.org/t/p/w200/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg
+###
+https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png
