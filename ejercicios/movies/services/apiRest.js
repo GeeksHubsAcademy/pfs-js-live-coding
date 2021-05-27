@@ -16,4 +16,8 @@ export function getMovieById(id) {
   );
 }
 
-export function getTrendingMovies(page = 1) {}
+export function getTrendingMovies(page = 1) {
+  return fetchWrapper(
+    `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`,
+  );
+}
