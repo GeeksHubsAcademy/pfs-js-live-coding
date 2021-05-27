@@ -11,3 +11,8 @@ GET https://api.themoviedb.org/3/trending/all/day?api_key={{API_KEY}}
 https://image.tmdb.org/t/p/w200/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg
 ###
 https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png
+
+
+###
+
+https://api.themoviedb.org/3/search/movie?api_key={{API_KEY}}&language=en-US&page=1&include_adult=true&query=superman
