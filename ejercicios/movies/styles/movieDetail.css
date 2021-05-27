@@ -1,0 +1,8 @@
+nav {
+  padding: 1em;
+}
+
+nav a {
+  color: white;
+  text-transform: uppercase;
+}
