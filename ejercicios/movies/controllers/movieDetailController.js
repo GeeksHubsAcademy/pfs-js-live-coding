@@ -31,9 +31,6 @@ document.addEventListener('DOMContentLoaded', async () => {
               <div class="release_date">${release_date}</div>
               <div class="genereName">${genereName}</div>
               <p class="overview">${overview}</p>
-
-
-
          </article>`,
     );
     mainNode.appendChild(filmNode);

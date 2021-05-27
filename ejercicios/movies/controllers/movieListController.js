@@ -34,6 +34,9 @@ async function renderPage(page) {
     mainNode.appendChild(filmNode);
   }
 }
+
+
+
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     await renderPage(currentPage);
