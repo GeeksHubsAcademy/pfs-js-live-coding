@@ -5,9 +5,17 @@ function createNode(html) {
   return node.firstChild;
 }
 
-export function createTodoNode({ id, text, updated, created }) {
+export function createTodoNode({
+  id,
+  text,
+  updated,
+  created,
+  completed,
+}) {
   const newNode = createNode(`
-  <div class="todo" id="${id}">
+  <div class="todo ${
+    completed ? 'completed' : 'uncompleted'
+  }" id="${id}">
     <div class="text">${text}</div>
     <div class="date updated">${updated}</div>
     <div class="date created">${created}</div>

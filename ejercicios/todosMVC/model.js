@@ -42,6 +42,7 @@ class ListTodo {
     this.todosList = this.todosList.filter(
       (todo) => todo.id !== id,
     );
+
     this.persist();
   }
   persist() {
